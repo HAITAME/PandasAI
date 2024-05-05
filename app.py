@@ -16,7 +16,7 @@ load_dotenv()
 os.environ["PANDASAI_API_KEY"] = os.getenv('pandasai_api')
 
 #llm = ChatGoogleGenerativeAI(model="gemini-pro", verbose = True, temperature = 0.5, google_api_key=os.getenv('gemini_api'))
-llm = GoogleGemini(api_key=os.getenv('gemini_api'), model="gemini-pro")
+#llm = GoogleGemini(api_key=os.getenv('gemini_api'), model="gemini-pro")
 
 st.title("Data visualization with PandasAI")
 
@@ -29,7 +29,7 @@ if uploaded_file is not None :
 
 
     agent = Agent(data)
-    #df =SmartDataframe(data , config={"llm":agent})
+    #df =SmartDataframe(data , config={"llm": llm})
     prompt = st.text_area("Enter your prompt:")
     
     if st.button("Generate"):
